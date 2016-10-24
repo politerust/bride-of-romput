@@ -47,3 +47,8 @@ void write_file_to_disk(const uint8_t *data, uint32_t length, const char *filena
     int close_success = fclose(file_handle);
     assert(close_success == 0);
 }
+
+uint32_t bytes_to_dword(uint8_t b1, uint8_t b2, uint8_t b3, uint8_t b4) {
+    return (b1 << 24) | (b2 << 16) | (b3 << 8) | b4;
+}
+
